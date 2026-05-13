@@ -1,0 +1,41 @@
+package com.mycompany.pitagoras;
+import java.util.Scanner;
+
+public class Pitagoras {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("--- Calculadora do Teorema de Pitágoras ---");
+        System.out.println("1. Calcular a Hipotenusa (c)");
+        System.out.println("2. Calcular um Cateto (a ou b)");
+        System.out.print("Escolha uma opção (1 ou 2): ");
+        int opcao = scanner.nextInt();
+        
+        if (opcao == 1) {
+            System.out.print("Digite o valor do primeiro cateto: ");
+            double cateto1 = scanner.nextDouble();
+            System.out.print("Digite o valor do segundo cateto: ");
+            double cateto2 = scanner.nextDouble();
+            
+            double hipotenusa = Math.sqrt(Math.pow(cateto1, 2) + Math.pow(cateto2, 2));
+            System.out.printf("A hipotenusa é: %.2f\n", hipotenusa);
+            
+        } else if (opcao == 2) {
+            System.out.print("Digite o valor da hipotenusa: ");
+            double hipotenusa = scanner.nextDouble();
+            System.out.print("Digite o valor do cateto conhecido: ");
+            double catetoConhecido = scanner.nextDouble();
+            
+            if (hipotenusa > catetoConhecido) {
+                double catetoDesconhecido = Math.sqrt(Math.pow(hipotenusa, 2) - Math.pow(catetoConhecido, 2));
+                System.out.printf("O outro cateto é: %.2f\n", catetoDesconhecido);
+            } else {
+                System.out.println("Erro: A hipotenusa deve ser maior que o cateto!");
+            }
+        } else {
+            System.out.println("Opção inválida!");
+        }
+        
+        scanner.close();
+    }
+}
