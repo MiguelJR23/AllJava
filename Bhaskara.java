@@ -1,4 +1,4 @@
-package com.mycompany.bhaskara;
+package com.mycompany.Bhaskara;
 import java.util.Scanner;
 
 public class Bhaskara {
