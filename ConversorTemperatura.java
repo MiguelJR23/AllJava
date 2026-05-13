@@ -1,4 +1,4 @@
-
+package com.mycompany.ConversorTemperatura;
 import java.util.Scanner;
 
 public class ConversorTemperatura {
